@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "name"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3,
+      "maxLength": 24
+    },
+    "bio": {
+      "type": "text"
+    },
+    "photo_stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo-story.photo-story",
+      "inversedBy": "authors"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.social-links"
+    },
+    "video_stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video-story.video-story",
+      "mappedBy": "authors"
+    },
+    "web_stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::web-story.web-story",
+      "mappedBy": "authors"
+    },
+    "stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::story.story",
+      "mappedBy": "authors"
+    }
+  }
+}

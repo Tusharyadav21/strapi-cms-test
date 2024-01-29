@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_stories",
+  "info": {
+    "singularName": "photo-story",
+    "pluralName": "photo-stories",
+    "displayName": "Photo-Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 24,
+      "maxLength": 100
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "customField",
+      "options": [
+        "Latest",
+        "Technology",
+        "Business",
+        "Entertainment"
+      ],
+      "customField": "plugin::multi-select.multi-select",
+      "required": true
+    },
+    "story_content": {
+      "type": "blocks"
+    },
+    "sub_headline": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "headline",
+      "required": true
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "mappedBy": "photo_stories"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_card_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

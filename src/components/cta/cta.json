@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_cta_ctas",
+  "info": {
+    "displayName": "CTA",
+    "icon": "arrowRight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cta_title": {
+      "type": "string"
+    },
+    "cta_href": {
+      "type": "text"
+    }
+  }
+}

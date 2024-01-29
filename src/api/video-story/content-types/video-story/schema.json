@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_stories",
+  "info": {
+    "singularName": "video-story",
+    "pluralName": "video-stories",
+    "displayName": "Video-Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "sub_headline": {
+      "type": "text"
+    },
+    "video": {
+      "type": "dynamiczone",
+      "components": [
+        "video-story.video-story"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Latest",
+        "Technology",
+        "Business",
+        "Entertainment"
+      ]
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "video_stories"
+    }
+  }
+}

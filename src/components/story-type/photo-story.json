@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_story_type_photo_stories",
+  "info": {
+    "displayName": "Photo-Story",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "story_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "story_content": {
+      "type": "blocks"
+    }
+  }
+}

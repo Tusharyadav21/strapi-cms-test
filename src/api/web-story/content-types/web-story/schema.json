@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_stories",
+  "info": {
+    "singularName": "web-story",
+    "pluralName": "web-stories",
+    "displayName": "Web-Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "sub_headline": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "headline"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Latest",
+        "Technology",
+        "Business",
+        "Entertainment "
+      ],
+      "required": true
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "web_stories"
+    },
+    "Pages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "web-story.web-story"
+    }
+  }
+}

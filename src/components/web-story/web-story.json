@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_web_story_web_stories",
+  "info": {
+    "displayName": "Web Story",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "sub_headline": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "cta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.cta"
+    }
+  }
+}
